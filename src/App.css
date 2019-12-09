@@ -1,22 +1,184 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/*- Typograpy and resets -*/
+html {
+	font-size: 16px;
+	scroll-snap-type: y mandatory;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 100%;
+	background: url('https://images.unsplash.com/photo-1557264337-e8a93017fe92?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80')
+		no-repeat center center/cover fixed;
+	height: 100vh;
+}
+
+#root {
+	width: 100%;
+	height: 100%;
+}
+
+section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, .5);
+
+	/* Scroll Snap */
+	scroll-snap-align: center;
+}
+
+h1 {
+	margin-bottom: 16px;
+	font-size: 24px;
+	font-weight: 700;
+}
+
+h2 {
+	margin-bottom: 12px;
+	font-size: 18px;
+	font-weight: 400;
+}
+
+h5 {
+	font-size: 16px;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
 .App {
-  text-align: center;
+	min-height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
+.container-fluid {
+	max-width: 1440px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#main-nav {
+	background-color: rgba(0, 0, 0, 0);
+	transition: background-color 300ms ease;
 }
 
-.App-link {
-  color: #09d3ac;
+#main-nav.scrolled {
+	background-color: rgba(0, 0, 0, 1);
+}
+
+#pixel-anchor {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	top: 125px;
+	left: 0;
+}
+
+nav a {
+	color: #919aa1;
+}
+
+nav a.active,
+nav a:hover {
+	color: #fff !important;
+}
+
+nav a span {
+	color: #b62dbb;
+	opacity: 0;
+}
+
+nav a:hover span,
+nav a.active span {
+	opacity: 1;
+}
+
+.jumbotron {
+	text-align: center;
+}
+
+.jumbotron h1 {
+	font-family: 'Cairo', sans-serif;
+	font-size: 7rem;
+}
+
+.react-tabs__tab {
+	border-bottom: 2px solid white;
+}
+
+.react-tabs__tab img {
+	opacity: 1;
+	transition: all 300ms ease-in;
+}
+
+.react-tabs__tab h4 {
+	display: none;
+	width: 100%;
+	padding: 20px;
+}
+
+.react-tabs__tab.projects-tab:hover img {
+	opacity: .4;
+	transition: all 300ms ease-out;
+}
+
+.react-tabs__tab.projects-tab--selected img,
+.react-tabs__tab.projects-tab--selected:hover img {
+	opacity: .05;
+	transition: all 300ms ease-out;
+	border: 2px solid white;
+	border-bottom: 0;
+}
+
+.react-tabs__tab.projects-tab--selected h4,
+.react-tabs__tab.projects-tab:hover h4 {
+	display: block;
+}
+
+.react-tabs {
+	-webkit-tap-highlight-color: transparent;
+}
+
+.react-tabs__tab {
+	display: inline-block;
+	border: 1px solid transparent;
+	border-bottom: none;
+	bottom: 0;
+	position: relative;
+	list-style: none;
+	padding: 6px 12px;
+	cursor: pointer;
+	outline: none;
+}
+
+.react-tabs__tab-panel {
+	display: none;
+}
+
+.react-tabs__tab-panel--selected {
+	display: block;
+}
+
+.btn-outline-blue {
+	color: #0064c6;
+	border-color: #0064c6;
+}
+
+.btn-outline-blue:hover {
+	color: #fff;
+	background-color: #0064c6;
+}
+
+.bottom {
+	align-items: flex-end;
 }
